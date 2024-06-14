@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../config/route/app_routes.dart';
+
 class AppRoot extends StatelessWidget {
   static late AppRoot instance;
 
@@ -7,12 +9,12 @@ class AppRoot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title : 'Otus food',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(),
+      routerConfig: router,
     );
   }
 }
