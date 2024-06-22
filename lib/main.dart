@@ -7,6 +7,7 @@ void main() async {
   AppRoot.instance = const AppRoot();
 
   runZoned<Future<void>>(() async {
+    await AppRoot.instance.setup();
     runApp(AppRoot.instance);
   });
 }

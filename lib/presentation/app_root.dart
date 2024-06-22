@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:otus_food/config/theme/app_theme.dart';
 
 import '../config/route/app_routes.dart';
+import '../injection_container.dart';
 
 class AppRoot extends StatelessWidget {
   static late AppRoot instance;
@@ -27,5 +28,10 @@ class AppRoot extends StatelessWidget {
       theme: AppTheme.lightTheme,
       routerConfig: router,
     );
+  }
+
+  Future<void> setup() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await initializeDependencies();
   }
 }
