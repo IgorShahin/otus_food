@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:otus_food/core/extensions/extensions.dart';
+import 'package:otus_food/core/res/app_assets.dart';
 import 'package:otus_food/core/res/app_colors.dart';
 
 class RootScreen extends StatelessWidget {
@@ -26,15 +27,23 @@ class RootScreen extends StatelessWidget {
           child: BottomNavigationBar(
             selectedItemColor: context.color.accentColor,
             unselectedItemColor: AppColors.hint,
-            selectedFontSize: 10,
-            unselectedFontSize: 10,
+            selectedFontSize: 12,
+            unselectedFontSize: 12,
             items: [
               BottomNavigationBarItem(
-                icon: const Icon(Icons.local_pizza),
+                icon: Image.asset(AppAssets.iconRecipe),
+                activeIcon: Image.asset(
+                  AppAssets.iconRecipe,
+                  color: context.color.accentColor,
+                ),
                 label: context.l10n.recipeTitleNavigation,
               ),
               BottomNavigationBarItem(
-                icon: const Icon(Icons.person),
+                icon: Image.asset(AppAssets.iconProfile),
+                activeIcon: Image.asset(
+                  AppAssets.iconProfile,
+                  color: context.color.accentColor,
+                ),
                 label: context.l10n.loginTitleNavigation,
               ),
             ],
