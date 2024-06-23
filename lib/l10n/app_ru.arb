@@ -1,4 +1,5 @@
 {
   "recipeTitleNavigation": "Рецепты",
-  "loginTitleNavigation": "Вход"
+  "loginTitleNavigation": "Вход",
+  "time": "{time} минут"
 }

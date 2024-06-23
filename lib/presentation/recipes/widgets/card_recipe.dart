@@ -62,7 +62,7 @@ class CardRecipe extends StatelessWidget {
                         const Icon(Icons.access_time_outlined, size: 21),
                         const SizedBox(width: 11),
                         Text(
-                          "$time min",
+                          context.l10n.time(time),
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
