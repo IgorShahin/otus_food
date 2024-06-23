@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:otus_food/core/extensions/extensions.dart';
-import 'package:otus_food/core/res/app_assets.dart';
-import 'package:otus_food/core/res/app_colors.dart';
+import 'package:otus_food/core/res/resources.dart';
 
 class RootScreen extends StatelessWidget {
   const RootScreen({super.key, required this.navigationShell});

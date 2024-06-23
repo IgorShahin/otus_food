@@ -3,9 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:otus_food/config/route/app_routes.dart';
 import 'package:otus_food/core/widgets/base_container.dart';
-import 'package:otus_food/presentation/recipes/widgets/card_loading.dart';
-import 'package:otus_food/presentation/recipes/widgets/card_recipe.dart';
-import 'package:otus_food/presentation/recipes/widgets/failure_container.dart';
+import 'package:otus_food/presentation/recipes/widgets/widgets.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../../injection_container.dart';
