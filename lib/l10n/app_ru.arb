@@ -1,5 +1,7 @@
 {
   "recipeTitleNavigation": "Рецепты",
   "loginTitleNavigation": "Вход",
-  "time": "{time} минут"
+  "time": "{time} минут",
+  "errorTitleMessage": "Упс! Что-то пошло не так",
+  "errorDescriptionMessage": "Произошла какая-то ошибка.\nОбновите страницу чтобы продолжить."
 }
