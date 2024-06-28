@@ -13,7 +13,7 @@ class CardLoading extends StatelessWidget {
       height: 136,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
-        color: Colors.black12,
+        color: AppColors.base,
         boxShadow: [
           BoxShadow(
             color: AppColors.shadow.withAlpha(10),

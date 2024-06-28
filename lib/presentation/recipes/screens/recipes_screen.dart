@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:otus_food/config/route/app_routes.dart';
+import 'package:otus_food/core/res/app_colors.dart';
 import 'package:otus_food/core/widgets/base_container.dart';
 import 'package:otus_food/presentation/recipes/widgets/widgets.dart';
 import 'package:shimmer/shimmer.dart';
@@ -21,8 +22,8 @@ class RecipesScreen extends StatelessWidget {
           builder: (context, state) {
             if (state is RecipesLoading) {
               return Shimmer.fromColors(
-                baseColor: Colors.black12,
-                highlightColor: Colors.white,
+                baseColor: AppColors.base,
+                highlightColor: AppColors.base.withAlpha(10),
                 child: ListView.separated(
                   physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) => index == 0

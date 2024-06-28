@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:otus_food/presentation/auth/view/auth_screen.dart';
-import 'package:otus_food/presentation/recipes/view/recipe_item_screen.dart';
 
-import '../../presentation/recipes/view/recipes_screen.dart';
+import '../../presentation/auth/screens/auth_screen.dart';
+import '../../presentation/recipes/screens/recipe_item_screen.dart';
+import '../../presentation/recipes/screens/recipes_screen.dart';
 import '../../presentation/root/root_screen.dart';
 
 enum AppRoute {
