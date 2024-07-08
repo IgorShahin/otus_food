@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:otus_food/core/errors/failure.dart';
 import 'package:otus_food/domain/repositories/recipe_repositories.dart';
 
-import '../../../core/error/failure.dart';
 import '../../../domain/entities/recipe_data.dart';
 
 part 'recipes_event.dart';

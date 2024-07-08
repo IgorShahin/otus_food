@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:otus_food/core/extensions/context_extension.dart';
-import 'package:otus_food/core/res/app_assets.dart';
 import 'package:otus_food/core/res/resources.dart';
+import 'package:otus_food/resources/assets.gen.dart';
 
 class FailureContainer extends StatelessWidget {
   const FailureContainer({super.key});
@@ -13,7 +13,7 @@ class FailureContainer extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SvgPicture.asset(
-          AppAssets.iconFailure,
+          Assets.images.iconFailure.path,
           width: 196,
           height: 188,
           fit: BoxFit.cover,

@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:otus_food/core/error/failure.dart';
 import 'package:otus_food/data/services/api_service.dart';
 
+import '../../core/errors/failure.dart';
 import '../../domain/repositories/recipe_repositories.dart';
 import '../model/recipe_model.dart';
 

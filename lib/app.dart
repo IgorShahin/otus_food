@@ -1,15 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:go_router/go_router.dart';
 import 'package:otus_food/config/theme/app_theme.dart';
 
-import '../config/route/app_routes.dart';
-import '../injection_container.dart';
+import 'config/router/app_navigation_service.dart';
+import 'core/di/injection_container.dart';
 
-class AppRoot extends StatelessWidget {
-  static late AppRoot instance;
+class App extends StatefulWidget {
+  const App({super.key});
 
-  const AppRoot({super.key});
+  @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  late final GoRouter _routerConfig;
+
+  @override
+  void initState() {
+    super.initState();
+    _routerConfig = AppNavigationService.appNavigationServiceConfig;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +38,7 @@ class AppRoot extends StatelessWidget {
       ],
       darkTheme: AppTheme.darkTheme,
       theme: AppTheme.lightTheme,
-      routerConfig: router,
+      routerConfig: _routerConfig,
     );
   }
 
