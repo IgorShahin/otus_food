@@ -7,8 +7,7 @@ class BaseContainer extends StatelessWidget {
   final Widget child;
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       backgroundColor: AppColors.scaffoldBackground,
       body: SafeArea(
         child: Padding(
@@ -17,5 +16,4 @@ class BaseContainer extends StatelessWidget {
         ),
       ),
     );
-  }
 }

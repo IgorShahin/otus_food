@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:otus_food/config/theme/app_theme.dart';
 
 import 'config/router/app_navigation_service.dart';
-import 'core/di/injection_container.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -24,26 +23,19 @@ class _AppState extends State<App> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Otus food',
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('ru'),
-      ],
-      darkTheme: AppTheme.darkTheme,
-      theme: AppTheme.lightTheme,
-      routerConfig: _routerConfig,
-    );
-  }
-
-  Future<void> setup() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    await initializeDependencies();
-  }
+  Widget build(BuildContext context) => MaterialApp.router(
+        title: 'Otus food',
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('ru'),
+        ],
+        darkTheme: AppTheme.darkTheme,
+        theme: AppTheme.lightTheme,
+        routerConfig: _routerConfig,
+      );
 }

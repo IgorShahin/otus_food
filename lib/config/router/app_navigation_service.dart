@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:injectable/injectable.dart';
 import 'package:otus_food/config/router/app_routes.dart';
-import 'package:otus_food/core/di/injection_container.dart';
-import 'package:otus_food/presentation/recipes/bloc/recipes_bloc.dart';
-import 'package:otus_food/presentation/recipes/screens/recipes_screen.dart';
-import 'package:otus_food/presentation/root/root_screen.dart';
+import 'package:otus_food/core/di/injectable.dart';
+import 'package:otus_food/features/recipes/presentation/bloc/recipes_bloc.dart';
+import 'package:otus_food/features/recipes/presentation/screens/add_recipe/add_recipe_screen.dart';
+import 'package:otus_food/features/recipes/presentation/screens/recipe_item_screen.dart';
+import 'package:otus_food/features/recipes/presentation/screens/recipes_screen.dart';
+import 'package:otus_food/features/root/presentation/screens/root_screen.dart';
 
-import '../../presentation/login/screens/login_screen.dart';
-import '../../presentation/recipes/screens/recipe_item_screen.dart';
+import '../../features/login/presentation/screens/login_screen.dart';
 
+@LazySingleton()
 class AppNavigationService {
   static final appNavigationServiceConfig =
       getIt<AppNavigationService>().config();
@@ -38,6 +41,14 @@ class AppNavigationService {
                     pageBuilder: (context, state) => MaterialPage(
                       key: state.pageKey,
                       child: const RecipeItemScreen(),
+                    ),
+                  ),
+                  GoRoute(
+                    path: AppRoutes.addRecipe.path,
+                    name: AppRoutes.addRecipe.name,
+                    pageBuilder: (context, state) => MaterialPage(
+                      key: state.pageKey,
+                      child: const AddRecipeScreen(),
                     ),
                   ),
                 ],

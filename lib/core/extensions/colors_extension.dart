@@ -13,16 +13,17 @@ class ColorsExtension extends ThemeExtension<ColorsExtension> {
   ThemeExtension<ColorsExtension> copyWith({
     Color? mainColor,
     Color? accentColor,
-  }) {
-    return ColorsExtension(
-      mainColor: mainColor ?? this.mainColor,
-      accentColor: accentColor ?? this.accentColor,
-    );
-  }
+  }) =>
+      ColorsExtension(
+        mainColor: mainColor ?? this.mainColor,
+        accentColor: accentColor ?? this.accentColor,
+      );
 
   @override
   ThemeExtension<ColorsExtension> lerp(
-      covariant ThemeExtension<ColorsExtension>? other, double t) {
+    covariant ThemeExtension<ColorsExtension>? other,
+    double t,
+  ) {
     if (other is! ColorsExtension) {
       return this;
     }
