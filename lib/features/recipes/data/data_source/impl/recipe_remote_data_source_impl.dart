@@ -16,6 +16,7 @@ class RecipeRemoteDataSourceImpl implements RecipeRemoteDataSource {
     final response = await _httpService.makeRequest(
       request: const GetRequest(url: HttpEndpoints.recipe),
     );
-    return response.data;
+    final List<dynamic> data = response.data as List<dynamic>;
+    return data.map((json) => RecipeModel.fromJson(json as Map<String, dynamic>)).toList();
   }
 }
