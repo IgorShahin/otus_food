@@ -43,14 +43,6 @@ class AppNavigationService {
                       child: const RecipeItemScreen(),
                     ),
                   ),
-                  GoRoute(
-                    path: AppRoutes.addRecipe.path,
-                    name: AppRoutes.addRecipe.name,
-                    pageBuilder: (context, state) => MaterialPage(
-                      key: state.pageKey,
-                      child: const AddRecipeScreen(),
-                    ),
-                  ),
                 ],
               ),
               StatefulShellBranch(
@@ -63,6 +55,14 @@ class AppNavigationService {
                 ],
               ),
             ],
+          ),
+          GoRoute(
+            path: AppRoutes.addRecipe.path,
+            name: AppRoutes.addRecipe.name,
+            pageBuilder: (context, state) => MaterialPage(
+              key: state.pageKey,
+              child: const AddRecipeScreen(),
+            ),
           ),
         ],
       );

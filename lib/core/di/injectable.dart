@@ -10,5 +10,5 @@ final GetIt getIt = GetIt.instance;
   asExtension: true,
 )
 Future<void> configureDependencies(String environment) async {
-  await getIt.init(environment: environment);
+  getIt.init(environment: environment);
 }
