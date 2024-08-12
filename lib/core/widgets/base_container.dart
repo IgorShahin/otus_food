@@ -7,10 +7,12 @@ class BaseContainer extends StatelessWidget {
     required this.child,
     this.appBar,
     this.backgroundColor = AppColors.scaffoldBackground,
+    this.isScrollable = false,
   });
 
   final Widget child;
   final AppBar? appBar;
+  final bool isScrollable;
   final Color? backgroundColor;
 
   @override
@@ -18,10 +20,18 @@ class BaseContainer extends StatelessWidget {
         backgroundColor: backgroundColor,
         appBar: appBar,
         body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: child,
-          ),
+          child: isScrollable
+              ? SingleChildScrollView(
+                  padding: const EdgeInsets.only(bottom: 14),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: child,
+                  ),
+                )
+              : Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: child,
+                ),
         ),
       );
 }

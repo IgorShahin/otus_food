@@ -18,6 +18,7 @@ class _AddRecipeScreenState extends State<AddRecipeScreen> {
   @override
   Widget build(BuildContext context) => BaseContainer(
         backgroundColor: Colors.white,
+        isScrollable: true,
         appBar: AppBar(
           title: Text(
             context.l10n.titleAppBarNewRecipe,
