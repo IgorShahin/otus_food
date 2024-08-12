@@ -1,8 +1,43 @@
 {
+  "httpMethodError": "[{statusCode}] Ошибка на сервере",
+  "@httpMethodError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int",
+        "example": "400"
+      }
+    }
+  },
   "recipeTitleNavigation": "Рецепты",
   "loginTitleNavigation": "Вход",
   "time": "{time} минут",
   "errorTitleMessage": "Упс! Что-то пошло не так",
   "errorDescriptionMessage": "Произошла какая-то ошибка.\nОбновите страницу чтобы продолжить.",
-  "titleAppBarNewRecipe": "Новый рецепт"
+  "titleAppBarNewRecipe": "Новый рецепт",
+  "@errors": {},
+  "unknownError": "Неизвестная ошибка",
+  "unknownServerError": "Неизвестная ошибка при запросе на сервере",
+  "serverError": "Критическая ошибка на сервере",
+  "serverConnectionError": "Ошибка соединения с сервером",
+  "connectionTimeoutError": "Время ожидания соединения истекло",
+  "noInternetError": "Отсутствует подключение к интернету",
+  "@addRecipe": {},
+  "recipeTitle": "Название рецепта",
+  "addImages": "Добавить фото рецепта",
+  "ingredients": "Ингредиенты",
+  "noIngredients": "нет ингредиентов",
+  "addIngredient": "Добавить ингредиент",
+  "steps": "Шаги приготовления",
+  "noSteps": "нет шагов приготовления",
+  "addStep": "Добавить шаг",
+  "saveRecipe": "Сохранить рецепт",
+  "ingredient": "Ингредиент",
+  "ingredientName": "Название ингредиента",
+  "amount": "Количество",
+  "add": "Добавить",
+  "step": "Шаг рецепта",
+  "stepDescription": "Описание шага",
+  "stepDuration": "Длительность шага",
+  "minutes": "Минуты",
+  "seconds": "Секунды"
 }
