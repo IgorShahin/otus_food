@@ -1,19 +1,29 @@
-import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+part 'http_failure.dart';
 
 abstract class Failure extends Equatable {
-  final DioException? error;
+  const Failure();
 
-  const Failure(this.error);
+  String getMessage(AppLocalizations strings);
+}
+
+class UnknownFailure extends Failure {
+  final Object? error;
+  final StackTrace? st;
+
+  const UnknownFailure({
+    this.error,
+    this.st,
+  });
 
   @override
-  List<Object?> get props => [error];
-}
+  String getMessage(AppLocalizations strings) => strings.unknownError;
 
-class ServerFailure extends Failure {
-  const ServerFailure(super.error);
-}
-
-class ConnectionFailure extends Failure {
-  const ConnectionFailure(super.error);
+  @override
+  List<Object?> get props => [
+        error,
+        st,
+      ];
 }
