@@ -5,7 +5,7 @@ class AppTheme {
   static final ThemeData lightTheme = ThemeData(
     fontFamily: 'Roboto',
     useMaterial3: false,
-    // colorScheme: const ColorScheme(brightness: null, primary: null, onPrimary: null, secondary: null, onSecondary: null, error: null, onError: null, surface: null, onSurface: null),
+    appBarTheme: appBarTheme(),
     extensions: const <ThemeExtension<dynamic>>[
       ColorsExtension.light,
     ],
@@ -18,4 +18,15 @@ class AppTheme {
       ColorsExtension.dark,
     ],
   );
+
+  static AppBarTheme appBarTheme() => const AppBarTheme(
+        color: Colors.white,
+        centerTitle: true,
+        iconTheme: IconThemeData(color: Colors.black),
+        titleTextStyle: TextStyle(
+          color: Color(0xFF165932),
+          fontSize: 20,
+          fontWeight: FontWeight.w400,
+        ),
+      );
 }
