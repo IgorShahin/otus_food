@@ -15,9 +15,10 @@ class OutlineButton extends StatelessWidget {
   Widget build(BuildContext context) => ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          foregroundColor: const Color(0xFF2D5A30),
+          maximumSize: const Size(232, 48),
+          foregroundColor: context.colors.mainColor,
           backgroundColor: Colors.white,
-          side: BorderSide(color: context.color.mainColor!, width: 3),
+          side: BorderSide(color: context.colors.mainColor, width: 3),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25),
           ),
@@ -33,7 +34,7 @@ class OutlineButton extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: context.color.mainColor,
+                color: context.colors.mainColor,
               ),
             ),
           ),

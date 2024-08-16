@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:otus_food/core/constants/colors.dart';
 import 'package:otus_food/core/extensions/context_extension.dart';
 
 import '../../../../core/widgets/dashed_rounded_rectangle_border.dart';
@@ -38,9 +39,9 @@ class _AddImagesState extends State<AddImages> {
           decoration: _image != null
               ? null
               : ShapeDecoration(
-                  color: const Color(0xFFEBEBEB),
+                  color: AppColors.scaffoldBackground,
                   shape: DashedRoundedRectangleBorder(
-                    side: const BorderSide(width: 1, color: Color(0xFF165932)),
+                    side: BorderSide(width: 1, color: context.colors.mainColor),
                     borderRadius: BorderRadius.circular(3),
                   ),
                 ),
@@ -49,17 +50,17 @@ class _AddImagesState extends State<AddImages> {
                 ? Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.add_photo_alternate_outlined,
-                        color: Color(0xFF165932),
+                        color: context.colors.mainColor,
                         size: 48,
                       ),
                       const SizedBox(height: 8),
                       Text(
                         context.l10n.addImages,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: Color(0xFF165932),
+                        style: TextStyle(
+                          color: context.colors.mainColor,
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
                         ),

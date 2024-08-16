@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:otus_food/core/res/app_colors.dart';
+import 'package:otus_food/core/constants/colors.dart';
 
 class BaseContainer extends StatelessWidget {
   const BaseContainer({

@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
-import 'package:otus_food/config/theme/app_theme.dart';
-
-import 'config/router/app_navigation_service.dart';
+import 'package:otus_food/core/router/app_navigation_service.dart';
+import 'package:otus_food/core/theme/themes.dart';
 
 class App extends StatefulWidget {
   const App({super.key});

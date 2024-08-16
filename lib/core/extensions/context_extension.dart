@@ -3,9 +3,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'colors_extension.dart';
 
-extension ContextExtensions on BuildContext {
+extension BuildContextExtension on BuildContext {
   AppLocalizations get l10n => AppLocalizations.of(this)!;
 
-  ColorsExtension get color =>
-      Theme.of(this).extension<ColorsExtension>()!;
+  ColorsExtension get colors => Theme.of(this).extension<ColorsExtension>()!;
 }

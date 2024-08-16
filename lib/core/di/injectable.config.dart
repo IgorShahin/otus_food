@@ -11,10 +11,10 @@
 import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
-import 'package:otus_food/config/router/app_navigation_service.dart' as _i1001;
 import 'package:otus_food/core/di/register_modules.dart' as _i351;
 import 'package:otus_food/core/errors/exceptions/exception_to_failure_converter.dart'
     as _i203;
+import 'package:otus_food/core/router/app_navigation_service.dart' as _i123;
 import 'package:otus_food/core/services/http/provider/dio_provider.dart'
     as _i498;
 import 'package:otus_food/core/services/http/service/impl/http_service_impl.dart'
@@ -50,8 +50,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => registerModules.provideHttpClientAdapter());
     gh.singleton<_i203.ExceptionToFailureConverter>(
         () => const _i203.ExceptionToFailureConverter());
-    gh.lazySingleton<_i1001.AppNavigationService>(
-        () => _i1001.AppNavigationService());
+    gh.lazySingleton<_i123.AppNavigationService>(
+        () => _i123.AppNavigationService());
     gh.singleton<_i498.DioProvider>(
         () => _i498.DioProvider(gh<_i361.HttpClientAdapter>()));
     gh.singleton<_i242.HttpService>(

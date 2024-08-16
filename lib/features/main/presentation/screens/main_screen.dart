@@ -3,10 +3,10 @@ import 'package:go_router/go_router.dart';
 import 'package:otus_food/core/extensions/extensions.dart';
 import 'package:otus_food/resources/assets.gen.dart';
 
-import '../../../../core/res/app_colors.dart';
+import '../../../../core/constants/colors.dart';
 
-class RootScreen extends StatelessWidget {
-  const RootScreen({super.key, required this.navigationShell});
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key, required this.navigationShell});
 
   final StatefulNavigationShell navigationShell;
 
@@ -25,7 +25,7 @@ class RootScreen extends StatelessWidget {
               ],
             ),
             child: BottomNavigationBar(
-              selectedItemColor: context.color.accentColor,
+              selectedItemColor: context.colors.accentColor,
               unselectedItemColor: AppColors.hint,
               selectedFontSize: 12,
               unselectedFontSize: 12,
@@ -34,7 +34,7 @@ class RootScreen extends StatelessWidget {
                   icon: Image.asset(Assets.images.iconRecipe.path),
                   activeIcon: Image.asset(
                     Assets.images.iconRecipe.path,
-                    color: context.color.accentColor,
+                    color: context.colors.accentColor,
                   ),
                   label: context.l10n.recipeTitleNavigation,
                 ),
@@ -42,7 +42,7 @@ class RootScreen extends StatelessWidget {
                   icon: Image.asset(Assets.images.iconProfile.path),
                   activeIcon: Image.asset(
                     Assets.images.iconProfile.path,
-                    color: context.color.accentColor,
+                    color: context.colors.accentColor,
                   ),
                   label: context.l10n.loginTitleNavigation,
                 ),

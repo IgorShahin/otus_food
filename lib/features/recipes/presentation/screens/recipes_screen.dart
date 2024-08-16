@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:otus_food/config/router/app_routes.dart';
-import 'package:otus_food/core/extensions/context_extension.dart';
-import 'package:otus_food/core/res/app_colors.dart';
+import 'package:otus_food/core/constants/colors.dart';
+import 'package:otus_food/core/extensions/extensions.dart';
+import 'package:otus_food/core/router/app_routes.dart';
 import 'package:otus_food/core/widgets/base_container.dart';
 import 'package:otus_food/features/recipes/presentation/widgets/widgets.dart';
 import 'package:shimmer/shimmer.dart';
@@ -17,7 +17,7 @@ class RecipesScreen extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         floatingActionButton: FloatingActionButton(
           onPressed: () => context.push(AppRoutes.addRecipe.path),
-          backgroundColor: context.color.accentColor,
+          backgroundColor: context.colors.accentColor,
           child: const Icon(Icons.add),
         ),
         body: BaseContainer(

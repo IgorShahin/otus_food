@@ -63,7 +63,7 @@ class CardRecipe extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
-                              color: context.color.accentColor,
+                              color: context.colors.accentColor,
                             ),
                           ),
                         ],
