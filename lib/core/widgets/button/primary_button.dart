@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:otus_food/core/constants/colors.dart';
-import 'package:otus_food/core/extensions/context_extension.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     super.key,
     required this.title,
     required this.onPressed,
+    this.color = AppColors.mainColor,
     this.isEnabled = true,
   });
 
   final String title;
   final VoidCallback? onPressed;
+  final Color color;
   final bool isEnabled;
 
   @override
@@ -20,8 +21,7 @@ class PrimaryButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           maximumSize: const Size(232, 48),
           foregroundColor: Colors.white,
-          backgroundColor:
-              isEnabled ? context.colors.mainColor : AppColors.mutedGray,
+          backgroundColor: isEnabled ? color : AppColors.mutedGray,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25),
           ),

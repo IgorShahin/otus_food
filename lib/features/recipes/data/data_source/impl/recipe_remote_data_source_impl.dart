@@ -14,8 +14,9 @@ class RecipeRemoteDataSourceImpl implements RecipeRemoteDataSource {
   @override
   Future<List<RecipeModel>> getRecipes() async {
     final response = await _httpService.makeRequest(
-      request: const GetRequest(url: HttpEndpoints.recipe),
+      request: const GetRequest(url: HttpEndpoints.recipes),
     );
+
     final data = response.data as List<dynamic>;
     return data
         .map((json) => RecipeModel.fromJson(json as Map<String, dynamic>))

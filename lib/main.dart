@@ -10,7 +10,7 @@ import 'package:sentry_flutter/sentry_flutter.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await _init();
-
+  runApp(const App());
   await setupSentry(
     () => runApp(const App()),
   );

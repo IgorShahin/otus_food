@@ -5,12 +5,13 @@ import 'package:injectable/injectable.dart';
 import 'package:otus_food/core/di/injectable.dart';
 import 'package:otus_food/core/router/app_routes.dart';
 import 'package:otus_food/features/main/presentation/screens/main_screen.dart';
-import 'package:otus_food/features/recipes/presentation/bloc/recipes_bloc.dart';
+import 'package:otus_food/features/recipes/presentation/bloc/list_recipes/list_recipes_bloc.dart';
 import 'package:otus_food/features/recipes/presentation/screens/add_recipe/add_recipe_screen.dart';
-import 'package:otus_food/features/recipes/presentation/screens/recipe_item_screen.dart';
+import 'package:otus_food/features/recipes/presentation/screens/item_recipe/recipe_item_screen.dart';
 import 'package:otus_food/features/recipes/presentation/screens/recipes_screen.dart';
 
 import '../../features/login/presentation/screens/login_screen.dart';
+import '../../features/recipes/domain/entities/recipe_entity.dart';
 
 @LazySingleton()
 class AppNavigationService {
@@ -31,7 +32,8 @@ class AppNavigationService {
                     path: AppRoutes.recipes.path,
                     name: AppRoutes.recipes.name,
                     builder: (_, __) => BlocProvider(
-                      create: (_) => getIt<RecipesBloc>()..add(GetRecipes()),
+                      create: (_) =>
+                          getIt<ListRecipesBloc>()..add(const GetRecipes()),
                       child: const RecipesScreen(),
                     ),
                   ),
@@ -40,7 +42,9 @@ class AppNavigationService {
                     name: AppRoutes.recipeItem.name,
                     pageBuilder: (context, state) => MaterialPage(
                       key: state.pageKey,
-                      child: const RecipeItemScreen(),
+                      child: RecipeItemScreen(
+                        recipe: state.extra! as RecipeEntity,
+                      ),
                     ),
                   ),
                 ],

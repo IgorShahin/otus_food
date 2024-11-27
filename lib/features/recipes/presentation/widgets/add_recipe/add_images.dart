@@ -5,7 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:otus_food/core/constants/colors.dart';
 import 'package:otus_food/core/extensions/context_extension.dart';
 
-import '../../../../core/widgets/dashed_rounded_rectangle_border.dart';
+import '../../../../../core/widgets/dashed_rounded_rectangle_border.dart';
 
 class AddImages extends StatefulWidget {
   const AddImages({super.key});

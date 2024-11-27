@@ -31,8 +31,8 @@ import 'package:otus_food/features/recipes/domain/repositories/recipe_repository
     as _i558;
 import 'package:otus_food/features/recipes/domain/usecases/uc_get_recipes.dart'
     as _i759;
-import 'package:otus_food/features/recipes/presentation/bloc/recipes_bloc.dart'
-    as _i17;
+import 'package:otus_food/features/recipes/presentation/bloc/list_recipes/list_recipes_bloc.dart'
+    as _i678;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -64,8 +64,8 @@ extension GetItInjectableX on _i174.GetIt {
         ));
     gh.factory<_i759.UcGetRecipes>(
         () => _i759.UcGetRecipes(gh<_i558.RecipeRepository>()));
-    gh.factory<_i17.RecipesBloc>(
-        () => _i17.RecipesBloc(gh<_i759.UcGetRecipes>()));
+    gh.factory<_i678.ListRecipesBloc>(
+        () => _i678.ListRecipesBloc(gh<_i759.UcGetRecipes>()));
     return this;
   }
 }

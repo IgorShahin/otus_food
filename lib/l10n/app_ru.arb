@@ -35,9 +35,12 @@
   "ingredientName": "Название ингредиента",
   "amount": "Количество",
   "add": "Добавить",
+  "save": "Сохранить",
   "step": "Шаг рецепта",
   "stepDescription": "Описание шага",
   "stepDuration": "Длительность шага",
   "minutes": "Минуты",
-  "seconds": "Секунды"
+  "seconds": "Секунды",
+  "titleAppBarItemRecipe": "Рецепт",
+  "startCooking": "Начать готовить"
 }

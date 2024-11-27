@@ -4,11 +4,11 @@ import 'package:go_router/go_router.dart';
 import 'package:otus_food/core/constants/colors.dart';
 import 'package:otus_food/core/extensions/extensions.dart';
 import 'package:otus_food/core/router/app_routes.dart';
+import 'package:otus_food/core/utils/custom_status.dart';
 import 'package:otus_food/core/widgets/base_container.dart';
+import 'package:otus_food/features/recipes/presentation/bloc/list_recipes/list_recipes_bloc.dart';
 import 'package:otus_food/features/recipes/presentation/widgets/widgets.dart';
 import 'package:shimmer/shimmer.dart';
-
-import '../bloc/recipes_bloc.dart';
 
 class RecipesScreen extends StatelessWidget {
   const RecipesScreen({super.key});
@@ -21,9 +21,9 @@ class RecipesScreen extends StatelessWidget {
           child: const Icon(Icons.add),
         ),
         body: BaseContainer(
-          child: BlocBuilder<RecipesBloc, RecipesState>(
+          child: BlocBuilder<ListRecipesBloc, ListRecipesState>(
             builder: (context, state) {
-              if (state is RecipesLoading) {
+              if (state.status.isLoading) {
                 return Shimmer.fromColors(
                   baseColor: AppColors.base,
                   highlightColor: AppColors.base.withAlpha(10),
@@ -40,7 +40,7 @@ class RecipesScreen extends StatelessWidget {
                     itemCount: 4,
                   ),
                 );
-              } else if (state is RecipesError) {
+              } else if (state.status.isError) {
                 return const Center(child: FailureContainer());
               } else {
                 return ListView.separated(
@@ -49,15 +49,20 @@ class RecipesScreen extends StatelessWidget {
                       ? Padding(
                           padding: const EdgeInsets.only(top: 45),
                           child: CardRecipe(
-                            onTap: () =>
-                                context.push(AppRoutes.recipeItem.path),
+                            onTap: () => context.push(
+                              AppRoutes.recipeItem.path,
+                              extra: state.recipes![index],
+                            ),
                             image: state.recipes![index].photoUrl,
                             name: state.recipes![index].name,
                             time: state.recipes![index].duration,
                           ),
                         )
                       : CardRecipe(
-                          onTap: () => context.push(AppRoutes.recipeItem.path),
+                          onTap: () => context.push(
+                            AppRoutes.recipeItem.path,
+                            extra: state.recipes![index],
+                          ),
                           image: state.recipes![index].photoUrl,
                           name: state.recipes![index].name,
                           time: state.recipes![index].duration,

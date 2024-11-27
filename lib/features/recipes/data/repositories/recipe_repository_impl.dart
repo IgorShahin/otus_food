@@ -22,7 +22,7 @@ class RecipeRepositoryImpl implements RecipeRepository {
   Future<Either<Failure, List<RecipeEntity>>> getRecipes() async {
     try {
       final result = await _recipeRemoteDataSource.getRecipes();
-      return Right(result.map((e) => e.toEntity()).toList());
+      return Right(result.map((e) => e.toRecipeEntity()).toList());
     } catch (e, s) {
       return Left(await _exceptionToFailureConverter.convertToFailure(e, s));
     }

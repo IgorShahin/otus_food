@@ -1,6 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:otus_food/core/extensions/context_extension.dart';
+
+import '../../../../resources/assets.gen.dart';
 
 class CardRecipe extends StatelessWidget {
   const CardRecipe({
@@ -12,7 +15,7 @@ class CardRecipe extends StatelessWidget {
   });
 
   final VoidCallback onTap;
-  final String image;
+  final String? image;
   final String name;
   final int time;
 
@@ -28,16 +31,25 @@ class CardRecipe extends StatelessWidget {
             color: Colors.transparent,
             child: Row(
               children: [
-                CachedNetworkImage(
-                  imageUrl: image,
-                  width: 149,
-                  height: 136,
-                  fit: BoxFit.cover,
-                  imageBuilder: (context, imageProvider) => Ink.image(
-                    image: imageProvider,
-                    fit: BoxFit.cover,
-                  ),
-                ),
+                image == null
+                    ? Container(
+                        width: 149,
+                        height: 136,
+                        padding: const EdgeInsets.all(16),
+                        child: SvgPicture.asset(
+                          Assets.images.noImage.path,
+                          fit: BoxFit.fill,
+                        ),
+                      )
+                    : CachedNetworkImage(
+                        imageUrl: image!,
+                        width: 149,
+                        height: 136,
+                        imageBuilder: (context, imageProvider) => Ink.image(
+                          image: imageProvider,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                 const SizedBox(width: 16),
                 Expanded(
                   child: Column(
